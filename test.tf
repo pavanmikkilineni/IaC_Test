@@ -89,3 +89,8 @@ resource "azurerm_linux_virtual_machine" "example" {
 output "public_ip" {
   value = azurerm_public_ip.example.ip_address
 }
+
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "my-public-bucket"
+  acl    = "public-read"
+}
