@@ -1,19 +1,11 @@
 provider "azurerm" {
   features {}
 }
-
-resource "aws_s3_bucket" "my_bucket" {
-  bucket = "my-public-bucket"
-  acl    = "public-read"
-
-   logging {
-    #target_bucket = "my-unique-log-bucket" # Change to your unique log bucket name
-    #target_prefix = "log/"
-  }
-
+resource "aws_s3_bucket" "bucket" {
+  bucket = "my-bucket"
 }
 
-resource "aws_s3_bucket" "my_log_bucket" {
-  bucket = "my-unique-log-bucket" # Change to your unique log bucket name
+resource "aws_s3_bucket_acl" "bucket_acl" {
+  bucket = aws_s3_bucket.bucket.id
   acl    = "private"
 }
