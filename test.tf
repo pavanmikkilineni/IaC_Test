@@ -7,8 +7,8 @@ resource "aws_s3_bucket" "my_bucket" {
   acl    = "public-read"
 
    logging {
-    target_bucket = "my-unique-log-bucket" # Change to your unique log bucket name
-    target_prefix = "log/"
+    #target_bucket = "my-unique-log-bucket" # Change to your unique log bucket name
+    #target_prefix = "log/"
   }
 
 }
